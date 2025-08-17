@@ -3,7 +3,10 @@ import Navbar from './components/Navbar';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Profile from './pages/Profile';
-import Tasks from './pages/Tasks';
+import ApplicationList from './pages/ApplicationList';
+import ApplicationForm from './pages/ApplicationForm';
+import ApplicationDetail from './pages/ApplicationDetail';
+// import Tasks from './pages/Tasks';
 
 function App() {
   return (
@@ -13,7 +16,10 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/tasks" element={<Tasks />} />
+        {/* <Route path="/tasks" element={<Tasks />} /> */}
+        <Route path="/" element={<ApplicationList />} />
+        <Route path="/applications/new" element={<ApplicationForm />} />
+        <Route path="/applications/:id" element={<ApplicationDetail />} />
       </Routes>
     </Router>
   );
