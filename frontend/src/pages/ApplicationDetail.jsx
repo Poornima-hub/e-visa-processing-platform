@@ -70,7 +70,7 @@ const ApplicationDetail = () => {
             await axiosInstance.delete(`/api/applications/${id}`, {
                 headers: { Authorization: `Bearer ${user.token}` },
             });
-            nav('/applications'); // or back to list route if you have one
+            nav('/applications/new'); // or back to list route if you have one
         } catch (e) {
             alert('Failed to delete application.');
         }
@@ -86,7 +86,7 @@ const ApplicationDetail = () => {
                     Application {app._id?.slice(-6)}
                 </h1>
                 <div className="space-x-3">
-                    <Link to="/applications" className="underline">Back to list</Link>
+                    <Link to="/applications/new" className="underline">Back to list</Link>
                     <button onClick={() => setEditing((v) => !v)} className="px-3 py-1 rounded bg-gray-700 text-white">
                         {editing ? 'Cancel' : 'Edit'}
                     </button>
